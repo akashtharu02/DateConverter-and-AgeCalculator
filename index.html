@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Conversion & Age Calculator</title>
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header and Navigation -->
+
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo8.png" alt="AKASH THARU" class="logo-image">
+                <h1 class="logo-text">Date Conversion & Age Calculator</h1>
+            </div>
+
+
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#first-page">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#developer">Developer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="first-page">
+        <div class="hero-content">
+            <h2>Welcome To My Website</h2>
+            <p>This is a fullstack developer Akash Tharu.
+                This page is specially built for the conversion
+                of date <br> BS to AD & AD to BS" and calculation of age.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div id="home" class="main-container">
+        <!-- Conversion Section -->
+        <section id="conversion" class="conversion-section">
+
+
+            <!-- BS to AD Conversion Block -->
+            <div class="conversion-block">
+                <h3>Convert BS to AD</h3>
+                <label for="bs-date">Enter BS Date:</label>
+                <input type="text" id="bs-date" placeholder="Enter BS Date (YYYY-MM-DD)">
+                <button onclick="convertBStoAD()" class="btn">Convert to AD</button>
+                <p class="result1"><br> Converted Date :- </p>
+                <p id="ad-result" class="result2"><br> <!--Converted date will appear here.--> </p>
+            </div>
+
+
+            <!-- AD to BS Conversion Block -->
+            <div class="conversion-block">
+                <h3>Convert AD to BS</h3>
+                <label for="ad-date">Enter AD Date:</label>
+
+                <input type="date" id="ad-date">
+                <button onclick="convertADtoBS()" class="btn">Convert to BS</button>
+                <p class="result1"><br> Converted Date :- </p>
+                <p id="bs-result" class="result2"><!--Converted date will appear here.--> </p>
+
+            </div>
+
+
+            <!-- Age Calculator Block -->
+            <div class="conversion-block">
+                <h3>Age Calculator </h3>
+                <label for="dob-type">Select Date of Birth Type:</label>
+                <select id="dob-type" onchange="toggleDOBInput()">
+                    <option value="AD">AD</option>
+                    <option value="BS">BS</option>
+
+
+                </select>
+
+                <div id="ad-dob-input">
+                    <label for="dob-ad">Enter Date of Birth (AD):</label>
+                    <input type="date" id="dob-ad" placeholder="Enter AD Date of Birth">
+                </div>
+                <div id="bs-dob-input" style="display: none;">
+                    <label for="dob-bs">Enter Date of Birth (BS):</label>
+                    <input type="text" id="dob-bs" placeholder="Enter BS Date of Birth">
+                </div>
+
+                <button id="calculate-age-btn" onclick="calculateAge()" class="btn">Calculate Age</button>
+                <p class="result1"><br> Calculated Age :- </p>
+                <p id="age-result" class="result2"> <!--Calculated Age will appear here.--> </p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-column">
+                <a href="https://www.facebook.com/akashtharu.20602" target="_blank" class="social-icon"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/akash_chy_21/" target="_blank" class="social-icon"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-icon"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/@akashtharu2635" target="_blank" class="social-icon"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </section>
+
+        <!-- About the Developer Section -->
+        <section id="about" class="developer-section">
+            <div class="website-info">
+                <h3>About This Website</h3>
+                <p>
+                    Welcome to our Date Conversion and Age Calculator website! This platform is designed to help users
+                    seamlessly convert dates between the Gregorian calendar (AD) and the Bikram Sambat calendar (BS),
+                    which is widely used in Nepal. Additionally, you can calculate your exact age in years, months, and
+                    days by simply entering your date of birth.
+                </p>
+
+                <h4>Key Features</h4>
+
+                <ul style="list-style-type:disc;">
+                    <li><b>AD to BS Conversion:</b> Quickly convert any date from the Gregorian calendar (AD) to the
+                        corresponding Bikram Sambat (BS) date</li>
+                    <li><b>BS to AD Conversion:</b> Easily convert dates from the Bikram Sambat (BS) calendar to the Gregorian
+                        (AD) format. </li>
+                    <li><b>Age Calculator:</b> Calculate your age accurately in years, months, and days by entering your date
+                        of birth.</li>
+                </ul>
+                <h3>Why This Website?</h3>
+                <p>
+                    This website was developed to simplify the process of converting dates between these two calendar
+                    systems, which is especially useful for individuals who need to work with both calendars in daily
+                    life. Whether you're checking important dates, filling out forms, or simply curious, this tool
+                    offers accurate and reliable date conversion and age calculation features.
+                    <br>
+                    <br>
+                    Our user-friendly design ensures that everyone can navigate the tools with ease, whether you're a
+                    student, professional, or just someone interested in knowing more about the Bikram Sambat calendar.
+                </p>
+
+
+            </div>
+            <div class="developer-info">
+                <img src="img.png" alt="Akash Tharu" class="developer-picture">
+                <div class="developer-details">
+                    <h3>About the Developer</h3>
+                    <p><strong>Name:</strong> Akash Tharu</p>
+                    <p><strong>Location:</strong> Butwal Municipality, Rupandehi District, Lumbini Province, Nepal</p>
+                    <p><strong>Education:</strong> IT Student at Crimson College of Technology, Butwal</p>
+                    <p><strong>Skills:</strong> HTML, CSS, JavaScript,java, PHP, SQL, Node.js, Python</p>
+                    <p>This website is built by Akash Tharu, an aspiring IT professional with a keen interest in web
+                        development, AI, and technology.</p>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Akash Tharu. All rights reserved.</p>
+    </footer>
+
+    <script src="script3 - Copy.js"></script>
+</body>
+
+</html>
